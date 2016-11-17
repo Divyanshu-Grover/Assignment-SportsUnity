@@ -1,0 +1,231 @@
+
+    body{
+    	font-family: Montserrat;
+    }
+
+
+    .navbar{
+
+    	background: #010028;
+    	border:none;
+
+    }
+    .logoimage{
+    	width: 30%;
+    }
+
+    .topsection{
+    	background: #03153d;
+    	margin-top: -20px;
+    }
+
+    .buildingsection{
+    	color: #8dc747;
+    	font-size: 30px;
+    }
+
+    .tscomp1{
+    	margin-left: 33%;
+    	margin-top: 15%;
+    	margin-bottom: 30%;
+    }
+
+    /*switch*/
+    .switch input {
+        display: none;
+    }
+    .rss-feed-url{
+        display: none;
+    }
+    .switch i {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid;
+        padding-right: 15px;
+        transition: all ease 0.2s;
+        -webkit-transition: all ease 0.2s;
+        border-radius: 15px;
+        box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: -4px;
+    }
+    .switch i:before {
+        display: block;
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    }
+    .switch :checked + i {
+        padding-right: 0;
+        padding-left: 15px;
+        box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #367EE8;
+        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #367EE8;
+    }
+   	
+
+   	.tscomp3{
+   		margin-left: 15%;
+   		margin-top: 17%;
+   	}
+
+   	.dropdownitems{
+   		background: none;
+   		margin-top: 2%;
+   	}
+
+
+   	/*Sidebar*/
+
+	.sidebar {
+   	  padding: 1px 0 1px 0;
+   	  background: #fff;
+   	  height: 700px;
+   	}
+
+   	    
+   	.sidebar-menu {
+   	  margin-top: 30px;
+   	}
+
+   	.sidebar-menu ul li {
+   	  /*border-bottom: 1px solid #f0f4f7;*/
+   	}
+
+   	.sidebar-menu ul li:last-child {
+   	  border-bottom: none;
+   	}
+
+   	.sidebar-menu ul li a {
+   	  color: rgba(147, 163, 181, 0.54);
+   	  font-size: 14px;
+   	  font-weight: 400;
+   	  padding: 20px;
+   	}
+
+   	.sidebar-menu ul li a i {
+   	  margin-right: 8px;
+   	  font-size: 14px;
+   	}
+
+   	.sidebar-menu ul li a:hover {
+   	  background-color: #e4f7fe;
+   	  color: #2aafd7;
+   	}
+
+   	.sidebar-menu ul li.active {
+   	  border-bottom: none;
+   	}
+
+   	.sidebar-menu ul li.active a {
+   	  color: #2aafd7;
+   	  background-color: #e4f7fe;
+   	  border-left: 4px solid #2aafd7;
+   	  margin-left: -2px;
+   	}
+
+   	
+   	.content {
+   	  margin-top: 2%;
+   	  margin-right: 2%;
+   	  margin-bottom: 2%;
+   	  background: #fff;
+   	  padding: 2%;
+   	}
+
+   	.iconssidebar{
+   		margin-left: 5%;
+   	}
+
+   	.content-1{
+   		max-height: 440px;
+   	}
+
+   	.content-2{
+   	margin-top: 0%;
+   	margin-left: 0%;
+   	}
+
+   	.content-3{
+   		margin-top: 0%;
+   		margin-left: 0%;
+   		
+   	}
+
+   	.content-4{
+   		margin-top: 0%;
+   		margin-left: 0%;
+   		
+   	}
+
+	.content-width{
+   		width: 30.85% !important;
+   	}
+   	
+	.radio-inline{
+   		color: #95bf4d !important;
+   	}
+
+   	input[type='radio'] {
+    -webkit-appearance:none;
+    width:13px;
+    height:13px;
+    border:1px solid #95bf4d;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 5px 0px gray inset;
+	}
+	input[type='radio']:hover {
+	    box-shadow:0 0 5px 0px #95bf4d inset;
+	}
+	input[type='radio']:before {
+	    content:'';
+	    display:block;
+	    width:60%;
+	    height:60%;
+	    margin: 20% auto;    
+	    border-radius:50%;    
+	}
+	input[type='radio']:checked:before {
+	    background:#95bf4d;
+	}
+
+	.navbarimage{
+		border-radius: 50%; 
+		width: 30px; 
+		margin-top: 50%;
+	}
+
+	.switchsec1{
+		color: rgba(243, 243, 243, 0.49); 
+		margin-top: 10%;
+	}
+
+	.ts1text1{
+		color: #FFF; 
+		margin-top: 10%; 
+		font-size: 19px; 
+		margin-bottom: 3%;
+	}
+
+	.topgraphsection{
+		border: 2px solid #041644;
+	}
+
+	.graphsmallsections{
+		border-right: 2px solid #041644; 
+		color: rgba(243, 243, 243, 0.3); 
+		margin-top: 5%;
+	}
+
+	.graphsmallsectionslast{
+		color: rgba(243, 243, 243, 0.3); 
+		margin-top: 5%;
+	}
+
+	.bottomgreyborder{
+		border-bottom: 2px solid #041644;
+	}
