@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>SportsUnity Assignment</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	
+
+
+    <style type="text/css">
+
+    body{
+    	font-family: Montserrat;
+    }
+
+
+    .navbar{
+
+    	background: #010028;
+    	border:none;
+
+    }
+    .logoimage{
+    	width: 30%;
+    }
+
+    .topsection{
+    	background: #03153d;
+    	margin-top: -20px;
+    }
+
+    .buildingsection{
+    	color: #8dc747;
+    	font-size: 30px;
+    }
+
+    .tscomp1{
+    	margin-left: 33%;
+    	margin-top: 15%;
+    	margin-bottom: 30%;
+    }
+
+    /*switch*/
+    .switch input {
+        display: none;
+    }
+    .rss-feed-url{
+        display: none;
+    }
+    .switch i {
+        display: inline-block;
+        cursor: pointer;
+        border: 1px solid;
+        padding-right: 15px;
+        transition: all ease 0.2s;
+        -webkit-transition: all ease 0.2s;
+        border-radius: 15px;
+        box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: -4px;
+    }
+    .switch i:before {
+        display: block;
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0,0,0,.5);
+    }
+    .switch :checked + i {
+        padding-right: 0;
+        padding-left: 15px;
+        box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #367EE8;
+        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5), inset 0 0 40px #367EE8;
+    }
+   	
+
+   	.tscomp3{
+   		margin-left: 15%;
+   		margin-top: 17%;
+   	}
+
+   	.dropdownitems{
+   		background: none;
+   		margin-top: 2%;
+   	}
+
+
+   	/*Sidebar*/
+
+	.sidebar {
+   	  padding: 1px 0 1px 0;
+   	  background: #fff;
+   	  height: 700px;
+   	}
+
+   	    
+   	.sidebar-menu {
+   	  margin-top: 30px;
+   	}
+
+   	.sidebar-menu ul li {
+   	  /*border-bottom: 1px solid #f0f4f7;*/
+   	}
+
+   	.sidebar-menu ul li:last-child {
+   	  border-bottom: none;
+   	}
+
+   	.sidebar-menu ul li a {
+   	  color: rgba(147, 163, 181, 0.54);
+   	  font-size: 14px;
+   	  font-weight: 400;
+   	  padding: 20px;
+   	}
+
+   	.sidebar-menu ul li a i {
+   	  margin-right: 8px;
+   	  font-size: 14px;
+   	}
+
+   	.sidebar-menu ul li a:hover {
+   	  background-color: #e4f7fe;
+   	  color: #2aafd7;
+   	}
+
+   	.sidebar-menu ul li.active {
+   	  border-bottom: none;
+   	}
+
+   	.sidebar-menu ul li.active a {
+   	  color: #2aafd7;
+   	  background-color: #e4f7fe;
+   	  border-left: 4px solid #2aafd7;
+   	  margin-left: -2px;
+   	}
+
+   	
+   	.content {
+   	  margin-top: 2%;
+   	  margin-right: 2%;
+   	  margin-bottom: 2%;
+   	  background: #fff;
+   	  padding: 2%;
+   	}
+
+   	.iconssidebar{
+   		margin-left: 5%;
+   	}
+
+   	.content-1{
+   		max-height: 440px;
+   	}
+
+   	.content-2{
+   	margin-top: 0%;
+   	margin-left: 0%;
+   	}
+
+   	.content-3{
+   		margin-top: 0%;
+   		margin-left: 0%;
+   		
+   	}
+
+   	.content-4{
+   		margin-top: 0%;
+   		margin-left: 0%;
+   		
+   	}
+
+	.content-width{
+   		width: 30.85% !important;
+   	}
+   	
+	.radio-inline{
+   		color: #95bf4d !important;
+   	}
+
+   	input[type='radio'] {
+    -webkit-appearance:none;
+    width:13px;
+    height:13px;
+    border:1px solid #95bf4d;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 5px 0px gray inset;
+	}
+	input[type='radio']:hover {
+	    box-shadow:0 0 5px 0px #95bf4d inset;
+	}
+	input[type='radio']:before {
+	    content:'';
+	    display:block;
+	    width:60%;
+	    height:60%;
+	    margin: 20% auto;    
+	    border-radius:50%;    
+	}
+	input[type='radio']:checked:before {
+	    background:#95bf4d;
+	}
+
+</style>
+
+</head>
+
+<body>
+<div class="container-fluid">
+
+	<nav class="navbar navbar-default row">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="">
+	        <img src="images/logo.jpg" class="logoimage">
+	      </a>
+	    </div>
+		<ul class="nav navbar-nav navbar-right" style="margin-right: 2%">
+			<li><img src="images/person.jpg" style="border-radius: 50%; width: 30px; margin-top: 50%;"></li>
+			<li class="dropdown">
+			  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span style="color: rgb(65, 66, 98);">Hi, Loc Ngo</span> <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+			    <li><a href="#">Action 1</a></li>
+			    <li><a href="#">Action 2</a></li>
+			    <li><a href="#">Action 3</a></li>
+			  </ul>
+			</li>
+		</ul>
+	  </div>
+	</nav>
+
+	<div class="row topsection">
+		<div class="col-md-3 col-xs-6">
+			<div class="tscomp1">
+			<a class="buildingsection"><i class="fa fa-building-o" aria-hidden="true"></i></a>
+			<p style="color: #FFF; margin-top: 10%; font-size: 19px; margin-bottom: 3%;">Aloft Group</p>
+			<p style="color: #317cae;">Tracy Hartman</p>
+			<label class="switch" style="color: rgba(243, 243, 243, 0.49); margin-top: 10%;">Lapsed<input type="checkbox" class="form-control" checked=""><i></i> Customers</label>
+			</div>
+		</div>
+		<div class="col-md-6" style=" border: 2px solid #041644;">
+			<div class="row" style="border-bottom: 2px solid #041644;">
+				<canvas id="myChart1" width="400" height="120"></canvas>
+
+			</div>
+
+			<div class="col-md-3 col-xs-6" style=" border-right: 2px solid #041644; color: rgba(243, 243, 243, 0.3); margin-top: 5%;">
+				<p style="text-align: center;">CREDIT HOLD</p>
+				<p style="font-size: 30px; color: #FFF;">$35.000</p>
+			</div>
+			
+			<div class="col-md-3 col-xs-6" style=" border-right: 2px solid #041644; color: rgba(243, 243, 243, 0.3); margin-top: 5%;">
+				<p style="text-align: center;">RENEW OPP</p>
+				<p style="font-size: 30px; color: #FFF;">$4.000</p>
+			</div>
+
+			<div class="col-md-3 col-xs-6" style=" border-right: 2px solid #041644; color: rgba(243, 243, 243, 0.3); margin-top: 5%;">
+				<p style="text-align: center;">DAYS LEFT</p>
+				<p style="font-size: 30px; color: #FFF; margin-left: 37%;">15</p>
+			</div>
+
+			<div class="col-md-3 col-xs-6" style=" color: rgba(243, 243, 243, 0.3); margin-top: 5%;">
+				<p><span style="color: rgba(19, 152, 211, 0.83);">URGENT</span><span style="margin-left: 23%; font-size: 11px;">see all</span></p>
+				<p style="font-size: 10px; color: rgba(255, 255, 255, 0.61);">Amanda wants to move forward, send over contract<br>EOW</p>
+			</div>
+		</div>
+
+		<div class="col-md-3 col-xs-6">
+			<div class="tscomp3">
+				
+				<div class="row" style="border-bottom: 2px solid #041644">
+					<p style="color: rgba(243, 243, 243, 0.3);">Assignee</p>
+				
+					<div class="dropdown">
+					  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: none; border-radius: 15px; border: 1px solid rgb(2, 66, 103);">
+					  	<div style="margin-top: 5%; margin-bottom: 5%; color: white;">
+					  		<img src="images/person.jpg" style="border-radius: 50%; width: 30px;">
+					  		<span style="margin-left: 5px; color: #b9b9b9;">Amanda</span>
+					  		<span class="caret"></span>
+					  	</div>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="dLabel">
+					    <li class="dropdownitems"> 
+					    	<img src="images/person.jpg" style="border-radius: 50%; width: 30px;">
+					    	<span style="margin-left: 5px; color: #b9b9b9;">Amanda</span>
+					    	
+					    </li>
+					    <li class="dropdownitems"> 
+					    	<img src="images/person.jpg" style="border-radius: 50%; width: 30px;">
+					    	<span style="margin-left: 5px; color: #b9b9b9;">Amanda</span>
+					    	
+					    </li>
+					    <li class="dropdownitems"> 
+					    	<img src="images/person.jpg" style="border-radius: 50%; width: 30px;">
+					    	<span style="margin-left: 5px; color: #b9b9b9;">Amanda</span>
+					    	
+					    </li>
+					    
+					  </ul>
+					</div>
+
+					<p style=" margin-top: 3%;color: rgba(243, 243, 243, 0.3);">Last Touched</p>
+					<p style="color: #b9b9b9;">4/3/2015</p>
+				</div>
+				
+				<div class="row" style="margin-top: 15%;">
+					<p style="color: #823b5f; font-size: 19px;">RISK</p><br/>
+					<p style="color: rgba(255, 255, 255, 0.61); font-size: 16px;">Product Issue</p>
+				</div>
+			</div>
+				
+		</div>
+	</div>
+	<div class="row" style="background: #E8EDF2">
+		<div class="row">
+			<div class="col-md-3">
+				<div class="sidebar">
+					<div class="sidebar-menu">
+						<ul class="nav">
+							<li>
+								<a>
+								<i class="fa fa-line-chart" aria-hidden="true"></i>
+								<span class="iconssidebar">Activities </span></a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-star-o" aria-hidden="true"></i>
+								<span class="iconssidebar">Oppurtunities </span></a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-usd" aria-hidden="true"></i>
+								<span class="iconssidebar">Assets </span></a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-file-o" aria-hidden="true"></i>
+								<span class="iconssidebar">Contracts</span></a>
+							</li>
+							<li class="active">
+								<a>
+								<i class="fa fa-cloud" aria-hidden="true"></i>
+								<span class="iconssidebar">Usage Data</span> </a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-google" aria-hidden="true"></i>
+								<span class="iconssidebar">Google Notes </span></a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-circle-thin" aria-hidden="true"></i>
+								<span class="iconssidebar">Accounts</span> </a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-file-text-o" aria-hidden="true"></i>
+								<span class="iconssidebar">Account History </span></a>
+							</li>
+							<li>
+								<a>
+								<i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+								<span class="iconssidebar">Risk </span></a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-9">
+	            <div class="row content content-1">
+				   	<div class="row" style="margin-left: 1%; "><p>USAGE</p></div>
+	        		<div class="row" style="background: #fafbfd;">
+	        			<ul class="nav nav-tabs" style="margin-left: 3%; padding-top: 1%;">
+		        			<li role="presentation" class="active"><a style="color: #2aafd7; ">Charts</a></li>
+		        			<li role="presentation"><a style="color: rgba(147, 163, 181, 0.54)">Table</a></li> 
+	        			</ul>
+	        		</div>
+	        		<div class="row">
+	        			<div class="row" style="margin-left: 5%; padding: 2%;">
+	        				<form style="float: right; color: rgba(147, 163, 181, 0.54); margin-right: 3%;">
+	        				    <label class="radio-inline">
+	        				      <input type="radio" name="optradio" checked>Activities
+	        				    </label>
+	        				    <label class="radio-inline">
+	        				      <input type="radio" name="optradio">Lists
+	        				    </label>
+	        				    <label class="radio-inline">
+	        				      <input type="radio" name="optradio">Logins
+	        				    </label>
+	        				    <label class="radio-inline">
+	        				      <input type="radio" name="optradio">Session length
+	        				    </label>
+	        				  </form>
+	        			</div>
+	        			<canvas id="myChart2" width="200" height="50"></canvas>
+	        		</div>    
+	            </div>
+	            
+	            <div class="row">
+	            	<div class="row content content-2 content-width col-md-3 col-xs-12">
+	            		<div class="row" style="margin-left: 1%;"><p>ACTIVITIES</p></div>
+	            		<canvas id="myChart3" width="600" height="400"></canvas>
+	            	</div>
+	            	
+	            	<div class="row content content-3 content-width col-md-3 col-xs-12">
+	            		<div class="row" style="margin-left: 1%; "><p>LISTS</p></div>
+	            		<canvas id="myChart4" width="600" height="400"></canvas>
+	            	</div>
+
+	            	<div class="row content content-4 content-width col-md-3 col-xs-12">
+	            		<div class="row" style="margin-left: 1%; "><p>SESSION LENGTH</p></div>
+	            		<canvas id="myChart5" width="600" height="400"></canvas>
+	            	</div>
+	            </div>
+	            
+
+	        </div>
+		
+		</div>
+	</div>
+	
+</div>
+</body>
+<script type="text/javascript">
+var ctx = document.getElementById("myChart1");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN","JUL","AUG","SEP","OCT","NOV","DEC"],
+        datasets: [{
+        	label: '',
+            data: [10, 19, 20, 27, 13, 16, 14, 22, 10, 13, 22, 17],
+            backgroundColor: [
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)',
+                'rgba(3, 28, 69, 0.82)'
+            ],
+            borderColor: [
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+        legend:{
+        	display: false,
+        }
+    }
+});
+
+var ctx2 = document.getElementById("myChart2");
+var myChart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: ["","Jun 2004", "Apr 2007", "Mar 2008", "Nov 2010", "May 2011", "Mar 2012","Sep 2013","Mar 2014","Sep 2014","Mar 2015","Sep 2015"],
+        datasets: [{
+        	label: '',
+            data: [0,48, 38, 26, 75, 80, 65, 90, 122, 60, 65, 85],
+            backgroundColor: [
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)',
+                'rgba(3, 28, 69, 0)'
+            ],
+            borderColor: [
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)',
+                'rgba(19, 152, 211, 0.83)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:false
+                }
+            }]
+        },
+        legend:{
+        	display: false,
+        	labels: {
+        		fontSize: 11,
+        		boxWidth: 10,
+        		padding: 23,
+                fontColor: 'rgb(161, 164, 169)'
+            }
+        }
+    }
+});
+// "Jamie Denman", "Josh Kowalko", "Larry Cardenas", "Muhammad Bratas"
+// "JAN", "FEB", "MAR", "APR"
+var ctx3 = document.getElementById("myChart3");
+var myChart = new Chart(ctx3, {
+    type: 'bar',
+    data: {
+        labels: ["JAN", "FEB", "MAR", "APR"],
+        datasets: [{
+        	label: '',
+            data: [40, 50, 80, 90],
+            backgroundColor: [
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(3, 173, 231, 0.97)'
+            ],
+            borderColor: [
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(3, 173, 231, 0.97)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                display: false
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                barThickness: 35,
+                display: true
+                
+            }]
+
+        },
+        legend:{
+        	display: false,
+        }
+    }
+});
+
+
+var ctx4 = document.getElementById("myChart4");
+var myChart = new Chart(ctx4, {
+    type: 'doughnut',
+    data: {
+        labels: ["Product 1", "Product 2", "Product 3", "Product 4"],
+        datasets: [{
+        	label: '',
+            data: [80, 50, 40, 60],
+            backgroundColor: [
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(81, 209, 191, 0.98)',
+                'rgba(163, 107, 65, 0.99)',
+                'rgba(252, 172, 80, 0.98)'
+            ],
+            borderColor: [
+                'rgba(3, 173, 231, 0)',
+                'rgba(3, 173, 231, 0)',
+                'rgba(3, 173, 231, 0)',
+                'rgba(3, 173, 231, 0)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                display: false
+            }]
+        },
+        legend: {
+        	position: 'right',
+        	labels: {
+        		fontSize: 11,
+        		boxWidth: 10,
+        		padding: 20,
+                fontColor: 'rgb(161, 164, 169)'
+            }
+        },
+        cutoutPercentage: 85
+    }
+});
+
+
+var ctx5 = document.getElementById("myChart5");
+var myChart = new Chart(ctx5, {
+    type: 'bar',
+    data: {
+        labels: ["Mon", "Tue", "Wed", "Thu", "Fri"],
+        datasets: [{
+        	label: '',
+            data: [40, 50, 80, 90, 60],
+            backgroundColor: [
+                'rgba(3, 173, 231, 0.97)',
+                'rgba(81, 209, 191, 0.98)',
+                'rgba(163, 107, 65, 0.99)',
+                'rgba(252, 172, 80, 0.98)'
+            ],
+            borderColor: [
+                'rgba(3, 173, 231, 0)',
+                'rgba(3, 173, 231, 0)',
+                'rgba(3, 173, 231, 0)',
+                'rgba(3, 173, 231, 0)'
+            ],
+            borderWidth: 1
+
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                display: false
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                barThickness: 25
+                
+            }]
+        },
+        legend:{
+        	display: false,
+        }
+
+        
+    }
+});
+</script>
+
+</html>
